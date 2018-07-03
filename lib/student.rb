@@ -33,8 +33,8 @@ def update
   DB[:conn].execute(sql, self.name, self.grade, self.id)
 end
 
-def self.create(name:, grade:)
-  student = Student.new
+def self.create
+  student = Student.new(name, grade)
   student.save
   student
 end
