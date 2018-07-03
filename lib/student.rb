@@ -7,10 +7,11 @@ class Student
   attr_accessor :id, :name, :grade
 
 def initialize(name, grade, id = nil)
-  @name = name 
-  @grade = grade 
+  @name = name
+  @grade = grade
   @id = id
-end 
+end
+
   def save
   sql = <<-SQL
     INSERT INTO students (name, grade)
