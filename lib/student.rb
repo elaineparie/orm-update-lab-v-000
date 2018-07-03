@@ -34,9 +34,9 @@ def update
 end
 
 def self.create(name:, grade:)
-  song = Student.new(name, album)
-  song.save
-  song
+  student = Student.new(name, grade)
+  student.save
+  student
 end
 
   def self.new_from_db(row)
