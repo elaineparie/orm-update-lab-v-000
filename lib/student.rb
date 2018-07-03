@@ -33,8 +33,14 @@ def update
   DB[:conn].execute(sql, self.name, self.grade, self.id)
 end
 
+def self.create(name:, grade:)
+  song = Student.new(name, album)
+  song.save
+  song
+end
+
   def self.new_from_db(row)
-  new_student = self.new(name, grade, id)
+  new_student = self.new(name, grade)
 new_student.id = row[0]
 new_student.name =  row[1]
 new_student.grade = row[2]
