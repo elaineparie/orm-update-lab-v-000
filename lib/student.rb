@@ -25,7 +25,7 @@ end
 def self.find_by_name(name)
   sql = "SELECT * FROM students WHERE name = ?"
   result = DB[:conn].execute(sql, name)[0]
-  student = Student.new(result[1], result[2])
+  student = Student.new(result[1], result[2], result[0])
   student
 end
 
