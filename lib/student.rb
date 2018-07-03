@@ -34,7 +34,7 @@ def update
 end
 
 def self.create
-  student = Student.new
+  student = self.new
   student.save
   student
 end
