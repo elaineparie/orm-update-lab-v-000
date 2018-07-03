@@ -25,7 +25,6 @@ end
 def self.find_by_name(name)
   sql = "SELECT * FROM students WHERE name = ?"
   result = DB[:conn].execute(sql, name)[0]
-  binding.pry
   student = Student.new(result[0], result[1], result[2])
 end
 
@@ -35,7 +34,7 @@ def update
 end
 
   def self.new_from_db(row)
-  new_student = self.new
+  new_student = self.new(name, grade, id)
 new_student.id = row[0]
 new_student.name =  row[1]
 new_student.grade = row[2]
